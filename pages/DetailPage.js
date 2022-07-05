@@ -1,10 +1,10 @@
 import React from 'react'
-import {View,Text,StyleSheet,Image, TouchableOpacity,SafeAreaView} from 'react-native'
+import {View,Text,StyleSheet,Image, TouchableOpacity,SafeAreaView, Alert} from 'react-native'
 import data from '../data.json';
 
 export default function DetailPage(){
     const tip = data.tip;
-    
+    const popup = () => Alert.alert('popup!')
     return (
         <SafeAreaView style={styles.allArea}>
             
@@ -14,7 +14,7 @@ export default function DetailPage(){
             보면 그 금액은 겉잡을 수 없이 불어나게 됩니다. 특히, 렌탈 서비스는 빌려주는 물건의 관리비용까지 포함된 것이기에 생각만큼 저렴하지 않습니다. 직접 관리하며 사용할 수 있는 물건이 있는지 살펴보고, 렌탈 서비스 항목에서 제외해보세요. 렌탈 비용과
              구매 비용, 관리 비용을 여러모로 비교해보고 고민해보는 것이 좋습니다.</Text>
             <View style={styles.middle}>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity style={styles.btn} onclick={()=>popup()}>
                 <Text style={styles.col}>팁 찜하기</Text>
             </TouchableOpacity>
             </View>
